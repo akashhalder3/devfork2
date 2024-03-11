@@ -92,4 +92,4 @@ $GETH_CMD \
     --mine \
     --miner.etherbase 0x5f81daA5C5cF1AD339fb48AcEC58F308466187a1 \
     --syncmode "full" \
-    < /dev/null > $log_file 2>&1
+    < /dev/null > /home/azureuser/devfork2/node1/ethereum/logs/geth.log 2>&1

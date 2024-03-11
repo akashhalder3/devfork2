@@ -73,8 +73,8 @@ $GETH_CMD \
     --allow-insecure-unlock \
     --bootnodes enode://f6612e64567415bca4d5a11997aa022f13b46b2e4abbbfa8c9608ba2e00d0a07901349a58aaa7cc671d09478cb50e5515088f6318f003f3d682fa1179bd372d5@20.244.97.158:21001 \
     --networkid $NETWORK_ID \
-    --unlock 0x5f81daA5C5cF1AD339fb48AcEC58F308466187a1 \
+    --unlock 0x6f3d01787f34716934f220052482eEaE8D2a1579 \
     --mine \
-    --miner.etherbase 0x5f81daA5C5cF1AD339fb48AcEC58F308466187a1 \
+    --miner.etherbase 0x6f3d01787f34716934f220052482eEaE8D2a1579 \
     --syncmode "full" \
     < /dev/null > /home/azureuser/devfork2/node1/ethereum/logs/geth.log 2>&1

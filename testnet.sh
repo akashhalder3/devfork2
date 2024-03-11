@@ -49,3 +49,8 @@ if ! ./scripts/build.sh; then
     echo -e "\n*Failed!* in the build step\n"
     exit 1
 fi
+
+if ! ./scripts/prepare-el.sh; then
+    echo -e "\n*Failed!* in the execution layer preparation step\n"
+    exit 1
+fi

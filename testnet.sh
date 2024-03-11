@@ -50,7 +50,19 @@ if ! ./scripts/build.sh; then
     exit 1
 fi
 
-if ! ./scripts/prepare-el.sh; then
-    echo -e "\n*Failed!* in the execution layer preparation step\n"
-    exit 1
-fi
+$GETH_CMD \
+    --datadir /home/azureuser/devfork2/node1/ethereum \
+    --authrpc.port $SIGNER_RPC_PORT \
+    --port $SIGNER_PORT \
+    --http \
+    --http.addr=0.0.0.0 \
+    --http.port $SIGNER_HTTP_PORT \
+    --http.corsdomain="*" \
+    --allow-insecure-unlock \
+    --bootnodes enode://f6612e64567415bca4d5a11997aa022f13b46b2e4abbbfa8c9608ba2e00d0a07901349a58aaa7cc671d09478cb50e5515088f6318f003f3d682fa1179bd372d5@20.244.97.158:21001 \
+    --networkid $NETWORK_ID \
+    --unlock 0x5f81daA5C5cF1AD339fb48AcEC58F308466187a1 \
+    --mine \
+    --miner.etherbase 0x5f81daA5C5cF1AD339fb48AcEC58F308466187a1 \
+    --syncmode "full" \
+    < /dev/null > $log_file 2>&1

@@ -54,6 +54,8 @@ check_cmd npm "See https://nodejs.org/en/download/ for more detail."
 check_cmd node "See https://nodejs.org/en/download/ for more detail."
 
 
+mkdir -p $ROOT
+
 # Run everything needed to generate $BUILD_DIR
 if ! ./scripts/build.sh; then
     echo -e "\n*Failed!* in the build step\n"

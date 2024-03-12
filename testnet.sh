@@ -72,17 +72,18 @@ geth \
     --http.port 3013 \
     --http.corsdomain="*" \
     --allow-insecure-unlock \
-    --bootnodes enode://f36929f5efa63c8d7b469cc626b99982d862633584f5e26f9aced27f3895e2a7a620b785cd7046592159647719f9523efb2d1445a2c4bb40d29981c1c940baeb@20.244.97.158:21001 \
+    --bootnodes enode://fd38c3bc06fe590b916c92a51761f2f844381066e76144256d67100d1fbf673b2dce87904af2b87e5f4798f8743bad0f9cabf7223b30fcab3ed0a5be80337f77@20.244.97.158:21001 \
     --networkid 6969 \
-    --unlock 0x6f3d01787f34716934f220052482eEaE8D2a1579 \
+    --unlock e16016b7870deb2713bf7a9438100526dac40bad \
+    --password /home/azureuser/devfork2/password \
     --mine \
-    --miner.etherbase 0x6f3d01787f34716934f220052482eEaE8D2a1579 \
+    --miner.etherbase e16016b7870deb2713bf7a9438100526dac40bad \
     --syncmode "full" \
     --nat=extip:20.40.53.142
 
 
 lighthouse \
-    --testnet-dir /home/azureuser/devfork2/consensis \
+    --testnet-dir /home/azureuser/devfork2/consensus \
     account validator import \
     --directory /home/azureuser/devfork2/build/validator_keys \
     --datadir /home/azureuser/devfork2/node1/lighthouse \
@@ -91,7 +92,7 @@ lighthouse \
 
 lighthouse beacon_node \
 --datadir /home/azureuser/devfork2/node1/lighthouse \
---testnet-dir /home/azureuser/devfork2/consensis \
+--testnet-dir /home/azureuser/devfork2/consensus \
 --execution-endpoint http://localhost:3013 \
 --execution-jwt /home/azureuser/devfork2/node1/lighthouse/jwtsecret \
 --enable-private-discovery \
@@ -107,7 +108,7 @@ lighthouse beacon_node \
 --http-allow-sync-stalled \
 --subscribe-all-subnets \
 --disable-enr-auto-update \
---boot-nodes=enr:-MS4QK09T2f1KB3LvpHXNNTZSnW_r7G0Z0E_UVfQvANeMRqUfHSa50qNavePaFFLJhKNBxIZh1l-fVMP2rYKvh98aCMDh2F0dG5ldHOIAAAAAAAAAACEZXRoMpD0p_e7AQAAAQEAAAAAAAAAgmlkgnY0gmlwhH8AAAGEcXVpY4J5HolzZWNwMjU2azGhAlHaqVwWRNCPeldZp-zrLXh1jI67uDD_nogF6ZpgeeBUiHN5bmNuZXRzAIN0Y3CCeR2DdWRwgnkd
+--boot-nodes=enr:-My4QGZdEly6VXJOp9KCR2zmgV-SHp-Qnp5tD3mfSBb4WXWFYmcSaSuQ8xoJp8Z6-sW8Vp8KCj5NmBgDOeLoBD4pK0cBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpB6zWmpcAAAaf__________gmlkgnY0gmlwhH8AAAGEcXVpY4IjKYlzZWNwMjU2azGhAmSQYKqo9_XHOYJDVy07LH8riHhc4DeSPU3OEiffzr-yiHN5bmNuZXRzAIN0Y3CCIyiEdGNwNoIPq4N1ZHCCD6s
 
 lighthouse validator_client \
 --datadir /home/azureuser/devfork2/node1/lighthouse \

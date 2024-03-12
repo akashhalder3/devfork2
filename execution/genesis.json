@@ -1,39 +1,39 @@
 {
-    "config": {
-      "homesteadBlock": 0,
-      "eip150Block": 0,
-      "eip155Block": 0,
-      "eip158Block": 0,
-      "byzantiumBlock": 0,
-      "constantinopleBlock": 0,
-      "petersburgBlock": 0,
-      "istanbulBlock": 0,
-      "muirGlacierBlock": 0,
-      "berlinBlock": 0,
-      "londonBlock": 0,
-      "arrowGlacierBlock": 0,
-      "grayGlacierBlock": 0,
-      "chainId": 6969,
-      "terminalTotalDifficulty": 280,
-      "clique": {
-        "period": 3,
-        "epoch": 30000
-      }
+  "config": {
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "muirGlacierBlock": 0,
+    "berlinBlock": 0,
+    "londonBlock": 0,
+    "arrowGlacierBlock": 0,
+    "grayGlacierBlock": 0,
+    "chainId": 6969,
+    "terminalTotalDifficulty": 280,
+    "clique": {
+      "period": 3,
+      "epoch": 30000
+    }
+  },
+  "difficulty": "0x1",
+  "gasLimit": "0xffffffffff",
+  "alloc": {
+    "FE41943AFa2Aa4C0CFad2C3cA5e718bF49bA5a3C": {
+      "balance": "1000000000000000000000000000"
     },
-    "difficulty": "0x1",
-    "gasLimit": "0xffffffffff",
-    "alloc": {
-      "7100b602c838E5dE2Ac364d30c93983ED15DA49A": {
-        "balance": "1000000000000000000000000000"
-      },
-      "EC3487EaFDC974b39E721224A981fCe77a965d95": {
-        "balance": "1000000000000000000000000000"
-      },
-      "fA2F8E391A2776FE088a091AB3bcE80b85CD6B0d": {
-        "balance": "1000000000000000000000000000"
-      }
+    "4401a165b13f6a059ec7D5D2d451e96f2AF03759": {
+      "balance": "1000000000000000000000000000"
     },
-    "gasUsed": "0x0",
-    "baseFeePerGas": null,
-    "extradata": "0x0000000000000000000000000000000000000000000000000000000000000000fA2F8E391A2776FE088a091AB3bcE80b85CD6B0d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-  }
+    "5462CEFAE99B7a1ad3774B2e5266a41c67e99EeB": {
+      "balance": "1000000000000000000000000000"
+    }
+  },
+  "gasUsed": "0x0",
+  "baseFeePerGas": null,
+  "extradata": "0x00000000000000000000000000000000000000000000000000000000000000005462CEFAE99B7a1ad3774B2e5266a41c67e99EeB0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

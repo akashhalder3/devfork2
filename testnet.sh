@@ -62,19 +62,56 @@ if ! ./scripts/build.sh; then
     exit 1
 fi
 
-$GETH_CMD \
+geth \
     --datadir /home/azureuser/devfork2/node1/ethereum \
-    --authrpc.port $SIGNER_RPC_PORT \
-    --port $SIGNER_PORT \
+    --authrpc.addr="0.0.0.0" \
+    --authrpc.port 3012 \
+    --port 3011 \
     --http \
     --http.addr=0.0.0.0 \
-    --http.port $SIGNER_HTTP_PORT \
+    --http.port 3013 \
     --http.corsdomain="*" \
     --allow-insecure-unlock \
-    --bootnodes enode://f6612e64567415bca4d5a11997aa022f13b46b2e4abbbfa8c9608ba2e00d0a07901349a58aaa7cc671d09478cb50e5515088f6318f003f3d682fa1179bd372d5@20.244.97.158:21001 \
-    --networkid $NETWORK_ID \
+    --bootnodes enode://f36929f5efa63c8d7b469cc626b99982d862633584f5e26f9aced27f3895e2a7a620b785cd7046592159647719f9523efb2d1445a2c4bb40d29981c1c940baeb@20.244.97.158:21001 \
+    --networkid 6969 \
     --unlock 0x6f3d01787f34716934f220052482eEaE8D2a1579 \
     --mine \
     --miner.etherbase 0x6f3d01787f34716934f220052482eEaE8D2a1579 \
     --syncmode "full" \
-    < /dev/null > /home/azureuser/devfork2/node1/ethereum/logs/geth.log 2>&1
+    --nat=extip:20.40.53.142
+
+
+lighthouse \
+    --testnet-dir /home/azureuser/devfork2/consensis \
+    account validator import \
+    --directory /home/azureuser/devfork2/build/validator_keys \
+    --datadir /home/azureuser/devfork2/node1/lighthouse \
+    --password-file /home/azureuser/devfork2/password \
+    --reuse-password
+
+lighthouse beacon_node \
+--datadir /home/azureuser/devfork2/node1/lighthouse \
+--testnet-dir /home/azureuser/devfork2/consensis \
+--execution-endpoint http://localhost:3013 \
+--execution-jwt /home/azureuser/devfork2/node1/lighthouse/jwtsecret \
+--enable-private-discovery \
+--staking \
+--enr-address 0.0.0.0 \
+--enr-udp-port 31000 \
+--enr-tcp-port 31000 \
+--port 31000 \
+--http \
+--http-address 0.0.0.0 \
+--http-port 9601 \
+--disable-packet-filter \
+--http-allow-sync-stalled \
+--subscribe-all-subnets \
+--disable-enr-auto-update \
+--boot-nodes=enr:-MS4QK09T2f1KB3LvpHXNNTZSnW_r7G0Z0E_UVfQvANeMRqUfHSa50qNavePaFFLJhKNBxIZh1l-fVMP2rYKvh98aCMDh2F0dG5ldHOIAAAAAAAAAACEZXRoMpD0p_e7AQAAAQEAAAAAAAAAgmlkgnY0gmlwhH8AAAGEcXVpY4J5HolzZWNwMjU2azGhAlHaqVwWRNCPeldZp-zrLXh1jI67uDD_nogF6ZpgeeBUiHN5bmNuZXRzAIN0Y3CCeR2DdWRwgnkd
+
+lighthouse validator_client \
+--datadir /home/azureuser/devfork2/node1/lighthouse \
+--testnet-dir /home/azureuser/devfork2/consensis \
+--init-slashing-protection \
+--beacon-nodes http://localhost:9601 \
+--suggested-fee-recipient 0xfa2f8e391a2776fe088a091ab3bce80b85cd6b0d

@@ -72,12 +72,11 @@ geth \
     --http.port 3013 \
     --http.corsdomain="*" \
     --allow-insecure-unlock \
-    --bootnodes enode://fd38c3bc06fe590b916c92a51761f2f844381066e76144256d67100d1fbf673b2dce87904af2b87e5f4798f8743bad0f9cabf7223b30fcab3ed0a5be80337f77@20.244.97.158:21001 \
     --networkid 6969 \
-    --unlock e16016b7870deb2713bf7a9438100526dac40bad \
+    --unlock 0x84bdc76cdb5b10018021b81f5a0dc8f71a43db76 \
     --password /home/azureuser/devfork2/password \
     --mine \
-    --miner.etherbase e16016b7870deb2713bf7a9438100526dac40bad \
+    --miner.etherbase 0x84bdc76cdb5b10018021b81f5a0dc8f71a43db76 \
     --syncmode "full" \
     --nat=extip:20.40.53.142
 
@@ -97,7 +96,7 @@ lighthouse beacon_node \
 --execution-jwt /home/azureuser/devfork2/node1/lighthouse/jwtsecret \
 --enable-private-discovery \
 --staking \
---enr-address 0.0.0.0 \
+--enr-address 20.40.53.142 \
 --enr-udp-port 31000 \
 --enr-tcp-port 31000 \
 --port 31000 \
@@ -108,7 +107,7 @@ lighthouse beacon_node \
 --http-allow-sync-stalled \
 --subscribe-all-subnets \
 --disable-enr-auto-update \
---boot-nodes=enr:-My4QGZdEly6VXJOp9KCR2zmgV-SHp-Qnp5tD3mfSBb4WXWFYmcSaSuQ8xoJp8Z6-sW8Vp8KCj5NmBgDOeLoBD4pK0cBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpB6zWmpcAAAaf__________gmlkgnY0gmlwhH8AAAGEcXVpY4IjKYlzZWNwMjU2azGhAmSQYKqo9_XHOYJDVy07LH8riHhc4DeSPU3OEiffzr-yiHN5bmNuZXRzAIN0Y3CCIyiEdGNwNoIPq4N1ZHCCD6s
+--boot-nodes=enr:-MS4QK8_cJapoQC4R9Hp5QQHH18VlPqev34nTfE0gB1IoY8zW3DCWuJQIQ_XP299kySEYEl7Jd8O7PnbV-6SIR_WOrYHh2F0dG5ldHOIAAMAAAAAAACEZXRoMpCCGKyJAgAAAf__________gmlkgnY0gmlwhBT0YZ6EcXVpY4J5GolzZWNwMjU2azGhAgPyFU7W_R2Vzi7qBbxsMOASV9e0NviBvarKKN2qLWlEiHN5bmNuZXRzAIN0Y3CCeRmDdWRwgnkZ
 
 lighthouse validator_client \
 --datadir /home/azureuser/devfork2/node1/lighthouse \

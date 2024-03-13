@@ -42,7 +42,7 @@ if test $validator_count -lt $VALIDATOR_COUNT; then
         existing-mnemonic \
         --num_validators $(expr $VALIDATOR_COUNT - $validator_count)\
         --mnemonic="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about" \
-        --validator_start_index 3 \
+        --validator_start_index $validator_count \
         --chain kiln \
         --keystore_password $(cat $ROOT/password) \
         --folder $BUILD_DIR

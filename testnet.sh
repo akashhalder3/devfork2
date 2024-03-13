@@ -82,12 +82,12 @@ geth \
 
 
 lighthouse \
-    --testnet-dir /home/azureuser/devfork2/consensus \
-    account validator import \
-    --directory /home/azureuser/devfork2/build/validator_keys \
-    --datadir /home/azureuser/devfork2/node1/lighthouse \
-    --password-file /home/azureuser/devfork2/password \
-    --reuse-password
+--testnet-dir /home/azureuser/devfork2/consensus \
+account validator import \
+--directory /home/azureuser/devfork2/build/validator_keys \
+--datadir /home/azureuser/devfork2/node1/lighthouse \
+--password-file /home/azureuser/devfork2/password \
+--reuse-password
 
 lighthouse beacon_node \
 --datadir /home/azureuser/devfork2/node1/lighthouse \

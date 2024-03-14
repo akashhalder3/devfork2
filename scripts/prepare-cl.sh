@@ -33,27 +33,27 @@ NODE_PATH=./web3/node_modules node ./web3/src/distribute-validators.js \
 
 echo "Sending the deposits to the deposit contract"
 NODE_PATH=./web3/node_modules node ./web3/src/transfer-deposit.js \
-    --endpoint $SIGNER_EL_DATADIR/geth.ipc \
+    --endpoint http://20.40.53.142:8000 \
     --deposit-address $address \
     -f $ROOT/deposit-data.json
 echo -e "\nDone sending all the deposits to the contract"
 
 cp $CONFIG_TEMPLATE_FILE $CONFIG_FILE
 echo "PRESET_BASE: \"$PRESET_BASE\"" >> $CONFIG_FILE
-echo "TERMINAL_TOTAL_DIFFICULTY: \"$TERMINAL_TOTAL_DIFFICULTY\"" >> $CONFIG_FILE
-echo "MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: \"$VALIDATOR_COUNT\"" >> $CONFIG_FILE
-echo "MIN_GENESIS_TIME: \"$(expr $(date +%s) + $GENESIS_DELAY)\"" >> $CONFIG_FILE
-echo "GENESIS_DELAY: \"$GENESIS_DELAY\"" >> $CONFIG_FILE
-echo "GENESIS_FORK_VERSION: \"$GENESIS_FORK_VERSION\"" >> $CONFIG_FILE
+# echo "TERMINAL_TOTAL_DIFFICULTY: \"$TERMINAL_TOTAL_DIFFICULTY\"" >> $CONFIG_FILE
+# echo "MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: \"$VALIDATOR_COUNT\"" >> $CONFIG_FILE
+# echo "MIN_GENESIS_TIME: \"$(expr $(date +%s) + $GENESIS_DELAY)\"" >> $CONFIG_FILE
+# echo "GENESIS_DELAY: \"$GENESIS_DELAY\"" >> $CONFIG_FILE
+# echo "GENESIS_FORK_VERSION: \"$GENESIS_FORK_VERSION\"" >> $CONFIG_FILE
 
-echo "DEPOSIT_CHAIN_ID: \"$NETWORK_ID\"" >> $CONFIG_FILE
-echo "DEPOSIT_NETWORK_ID: \"$NETWORK_ID\"" >> $CONFIG_FILE
-echo "DEPOSIT_CONTRACT_ADDRESS: \"$address\"" >> $CONFIG_FILE
+# echo "DEPOSIT_CHAIN_ID: \"$NETWORK_ID\"" >> $CONFIG_FILE
+# echo "DEPOSIT_NETWORK_ID: \"$NETWORK_ID\"" >> $CONFIG_FILE
+# echo "DEPOSIT_CONTRACT_ADDRESS: \"$address\"" >> $CONFIG_FILE
 
-echo "SECONDS_PER_SLOT: \"$SECONDS_PER_SLOT\"" >> $CONFIG_FILE
-echo "SECONDS_PER_ETH1_BLOCK: \"$SECONDS_PER_ETH1_BLOCK\"" >> $CONFIG_FILE
+# echo "SECONDS_PER_SLOT: \"$SECONDS_PER_SLOT\"" >> $CONFIG_FILE
+# echo "SECONDS_PER_ETH1_BLOCK: \"$SECONDS_PER_ETH1_BLOCK\"" >> $CONFIG_FILE
 
-echo "Generated $CONFIG_FILE"
+# echo "Generated $CONFIG_FILE"
 
 lcli eth1-genesis \
     --spec $PRESET_BASE \

@@ -39,7 +39,7 @@ NODE_PATH=./web3/node_modules node ./web3/src/transfer-deposit.js \
 echo -e "\nDone sending all the deposits to the contract"
 
 cp /home/azureuser/devfork2/consensus/config.yaml $CONFIG_FILE
-echo "PRESET_BASE: \"$PRESET_BASE\"" >> $CONFIG_FILE
+$PRESET_BASE=mainnet
 echo $PRESET_BASE
 # echo "TERMINAL_TOTAL_DIFFICULTY: \"$TERMINAL_TOTAL_DIFFICULTY\"" >> $CONFIG_FILE
 # echo "MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: \"$VALIDATOR_COUNT\"" >> $CONFIG_FILE
@@ -56,20 +56,20 @@ echo $PRESET_BASE
 
 # echo "Generated $CONFIG_FILE"
 
-lcli eth1-genesis \
-    --spec $PRESET_BASE \
-    --eth1-endpoints http://0.0.0.0:$SIGNER_HTTP_PORT \
-    --testnet-dir $CONSENSUS_DIR 2>/dev/null
+# lcli eth1-genesis \
+#     --spec $PRESET_BASE \
+#     --eth1-endpoints http://0.0.0.0:$SIGNER_HTTP_PORT \
+#     --testnet-dir $CONSENSUS_DIR 2>/dev/null
 
-echo "Generated $CONSENSUS_DIR/genesis.ssz"
+# echo "Generated $CONSENSUS_DIR/genesis.ssz"
 
-lcli \
-	generate-bootnode-enr \
-	--ip 20.40.53.142 \
-	--udp-port $CL_BOOTNODE_PORT \
-	--tcp-port $CL_BOOTNODE_PORT \
-	--genesis-fork-version $GENESIS_FORK_VERSION \
-	--output-dir $CL_BOOTNODE_DIR
+# lcli \
+# 	generate-bootnode-enr \
+# 	--ip 20.40.53.142 \
+# 	--udp-port $CL_BOOTNODE_PORT \
+# 	--tcp-port $CL_BOOTNODE_PORT \
+# 	--genesis-fork-version $GENESIS_FORK_VERSION \
+# 	--output-dir $CL_BOOTNODE_DIR
 
 bootnode_enr=$(cat $CL_BOOTNODE_DIR/enr.dat)
 echo "- $bootnode_enr" > $CONSENSUS_DIR/boot_enr.yaml

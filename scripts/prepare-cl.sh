@@ -39,6 +39,7 @@ NODE_PATH=./web3/node_modules node ./web3/src/transfer-deposit.js \
 echo -e "\nDone sending all the deposits to the contract"
 
 cp /home/azureuser/devfork2/consensus/config.yaml $CONFIG_FILE
+cp /home/azureuser/devfork2/consensus/genesis.ssz /home/azureuser/devfork2/data/consensus
 PRESET_BASE=mainnet
 echo $PRESET_BASE
 # echo "TERMINAL_TOTAL_DIFFICULTY: \"$TERMINAL_TOTAL_DIFFICULTY\"" >> $CONFIG_FILE

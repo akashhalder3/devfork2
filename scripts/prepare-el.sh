@@ -4,6 +4,7 @@ source ./scripts/util.sh
 set -eu
 
 mkdir -p $EXECUTION_DIR
+cp ../execution/genesis.json $EXECUTION_DIR
 
 new_account() {
     local node=$1
@@ -19,7 +20,7 @@ new_account() {
     # genesis=$(echo $genesis | jq ". + { \"alloc\": $alloc }")
 }
 
-genesis=../execution/genesis.json
+genesis=$EXECUTION_DIR/genesis.json
 for (( node=1; node<=$NODE_COUNT; node++ )); do
     el_data_dir $node
     new_account "#$node" $el_data_dir

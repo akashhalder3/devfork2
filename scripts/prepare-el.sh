@@ -4,7 +4,7 @@ source ./scripts/util.sh
 set -eu
 
 mkdir -p $EXECUTION_DIR
-cp ../execution/genesis.json $EXECUTION_DIR
+cp /home/azureuser/devfork2/execution/genesis.json $EXECUTION_DIR
 
 new_account() {
     local node=$1

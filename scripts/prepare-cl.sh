@@ -71,7 +71,7 @@ echo $PRESET_BASE
 # 	--genesis-fork-version $GENESIS_FORK_VERSION \
 # 	--output-dir $CL_BOOTNODE_DIR
 
-bootnode_enr=$(cat $CL_BOOTNODE_DIR/enr.dat)
+bootnode_enr=enr:-My4QITUBjYJtOxue7fwLPdZmspLK1uPlLf_ds1oXEh_Bjg-KMXNYvjc3n_FpcTW5-cNJpRrtWlbiozr7jgD3L_YtJgBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpB6zWmpcAAAaf__________gmlkgnY0gmlwhBQoNY6EcXVpY4IjKYlzZWNwMjU2azGhAoxuoB_95HQI0Kuc0IDQZ7nHsYRbt6kA0VvcWsfDVlVciHN5bmNuZXRzAIN0Y3CCIyiEdGNwNoIPq4N1ZHCCD6s
 echo "- $bootnode_enr" > $CONSENSUS_DIR/boot_enr.yaml
 echo "Generated $CONSENSUS_DIR/boot_enr.yaml"
 

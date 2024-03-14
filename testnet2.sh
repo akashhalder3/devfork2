@@ -56,7 +56,7 @@ if ! ./scripts/prepare-el.sh; then
 fi
 
 for (( node=1; node<=$NODE_COUNT; node++ )); do
-    ./scripts/el-node.sh $node $boot_enode &
+    ./scripts/el-node.sh $node &
 done
 
 # Wait until the signer node starts the IPC socket

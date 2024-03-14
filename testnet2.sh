@@ -69,7 +69,7 @@ if ! ./scripts/prepare-cl.sh; then
     exit 1
 fi
 
-./scripts/cl-bootnode.sh &
+# ./scripts/cl-bootnode.sh &
 
 for (( node=1; node<=$NODE_COUNT; node++ )); do
     ./scripts/cl-bn-node.sh $node &

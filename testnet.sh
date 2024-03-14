@@ -62,23 +62,33 @@ if ! ./scripts/build.sh; then
     exit 1
 fi
 
+./deposit \
+--language english \
+--non_interactive \
+existing-mnemonic \
+--num_validators 1 \
+--mnemonic="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about" \
+--validator_start_index 1 \
+--chain kiln
+
 geth \
-    --datadir /home/azureuser/devfork2/node1/ethereum \
-    --authrpc.addr="0.0.0.0" \
-    --authrpc.port 3012 \
-    --port 3011 \
-    --http \
-    --http.addr=0.0.0.0 \
-    --http.port 3013 \
-    --http.corsdomain="*" \
-    --allow-insecure-unlock \
-    --networkid 6969 \
-    --unlock 0x84bdc76cdb5b10018021b81f5a0dc8f71a43db76 \
-    --password /home/azureuser/devfork2/password \
-    --mine \
-    --miner.etherbase 0x84bdc76cdb5b10018021b81f5a0dc8f71a43db76 \
-    --syncmode "full" \
-    --nat=extip:20.40.53.142
+--datadir /home/azureuser/devfork2/node1/ethereum \
+--authrpc.addr="0.0.0.0" \
+--authrpc.port 3012 \
+--port 3011 \
+--http \
+--http.addr=0.0.0.0 \
+--http.port 3013 \
+--http.corsdomain="*" \
+--allow-insecure-unlock \
+--bootnodes "enode://155944db78f7357ac9f4b2bf2fbcd33098eb96c4888360ad7af8714c050978450d061eb0fdfe52cd673a4b5a9526ecb2445c8aaaf745ef024a3a7430be53ae13@20.40.53.142:21001" \
+--networkid 6969 \
+--unlock 89f47a3531d2b659ec6fca1d730c1bcb747e7f4f \
+--password /home/azureuser/devfork2/password \
+--mine \
+--miner.etherbase 89f47a3531d2b659ec6fca1d730c1bcb747e7f4f \
+--syncmode "full" \
+--nat=extip:20.244.97.158
 
 
 lighthouse \
@@ -86,7 +96,6 @@ lighthouse \
 account validator import \
 --directory /home/azureuser/devfork2/build/validator_keys \
 --datadir /home/azureuser/devfork2/node1/lighthouse \
---password-file /home/azureuser/devfork2/password \
 --reuse-password
 
 lighthouse beacon_node \
@@ -96,22 +105,22 @@ lighthouse beacon_node \
 --execution-jwt /home/azureuser/devfork2/node1/lighthouse/jwtsecret \
 --enable-private-discovery \
 --staking \
---enr-address 20.40.53.142 \
+--enr-address 20.244.97.158 \
 --enr-udp-port 31000 \
 --enr-tcp-port 31000 \
 --port 31000 \
 --http \
 --http-address 0.0.0.0 \
 --http-port 9601 \
---disable-packet-filter \
+--eth1 \
+--gui \
 --http-allow-sync-stalled \
---subscribe-all-subnets \
---disable-enr-auto-update \
---boot-nodes=enr:-MS4QK8_cJapoQC4R9Hp5QQHH18VlPqev34nTfE0gB1IoY8zW3DCWuJQIQ_XP299kySEYEl7Jd8O7PnbV-6SIR_WOrYHh2F0dG5ldHOIAAMAAAAAAACEZXRoMpCCGKyJAgAAAf__________gmlkgnY0gmlwhBT0YZ6EcXVpY4J5GolzZWNwMjU2azGhAgPyFU7W_R2Vzi7qBbxsMOASV9e0NviBvarKKN2qLWlEiHN5bmNuZXRzAIN0Y3CCeRmDdWRwgnkZ
+--libp2p-addresses /ip4/20.40.53.142/tcp/31001/p2p/16Uiu2HAm8gUZEhsuYZFmLw6X3DFmipFtST7U1685sLHwNcJip3Ej
+
 
 lighthouse validator_client \
 --datadir /home/azureuser/devfork2/node1/lighthouse \
 --testnet-dir /home/azureuser/devfork2/consensis \
 --init-slashing-protection \
 --beacon-nodes http://localhost:9601 \
---suggested-fee-recipient 0xfa2f8e391a2776fe088a091ab3bce80b85cd6b0d
+--suggested-fee-recipient 0x89f47a3531d2b659ec6fca1d730c1bcb747e7f4f

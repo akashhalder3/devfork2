@@ -55,25 +55,9 @@ if ! ./scripts/prepare-el.sh; then
     exit 1
 fi
 
-./scripts/el-bootnode.sh &
-bootnode_pid=$!
-# Keep reading until we can parse the boot enode
-while true; do
-    if ! ps p $bootnode_pid >/dev/null; then
-        exit 1
-    fi
-    boot_enode="$(cat $EL_BOOT_LOG_FILE 2>/dev/null | grep -o "enode:.*$" || true)"
-    if ! test -z "$boot_enode"; then
-        break
-    fi
-    sleep 1
-done
-
 for (( node=1; node<=$NODE_COUNT; node++ )); do
     ./scripts/el-node.sh $node $boot_enode &
 done
-
-./scripts/signer-node.sh $SIGNER_EL_DATADIR $boot_enode &
 
 # Wait until the signer node starts the IPC socket
 while ! test -S $SIGNER_EL_DATADIR/geth.ipc; do

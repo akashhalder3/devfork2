@@ -40,6 +40,7 @@ echo -e "\nDone sending all the deposits to the contract"
 
 cp /home/azureuser/devfork2/consensus/config.yaml $CONFIG_FILE
 echo "PRESET_BASE: \"$PRESET_BASE\"" >> $CONFIG_FILE
+echo $PRESET_BASE
 # echo "TERMINAL_TOTAL_DIFFICULTY: \"$TERMINAL_TOTAL_DIFFICULTY\"" >> $CONFIG_FILE
 # echo "MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: \"$VALIDATOR_COUNT\"" >> $CONFIG_FILE
 # echo "MIN_GENESIS_TIME: \"$(expr $(date +%s) + $GENESIS_DELAY)\"" >> $CONFIG_FILE

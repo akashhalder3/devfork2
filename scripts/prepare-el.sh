@@ -19,7 +19,7 @@ new_account() {
     # genesis=$(echo $genesis | jq ". + { \"alloc\": $alloc }")
 }
 
-genesis=../../execution/genesis.json
+genesis=../execution/genesis.json
 for (( node=1; node<=$NODE_COUNT; node++ )); do
     el_data_dir $node
     new_account "#$node" $el_data_dir

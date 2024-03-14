@@ -12,12 +12,12 @@ if ! test -e ./web3/node_modules; then
 fi
 
 # Use the signing node as a node to deploy the deposit contract
-output=$(NODE_PATH=./web3/node_modules node ./web3/src/deploy-deposit-contract.js --endpoint $SIGNER_EL_DATADIR/geth.ipc)
-address=$(echo "$output" | grep "address" | cut -d ' ' -f 2)
-transaction=$(echo "$output" | grep "transaction" | cut -d ' ' -f 2)
-block_number=$(echo "$output" | grep "block_number" | cut -d ' ' -f 2)
+# output=$(NODE_PATH=./web3/node_modules node ./web3/src/deploy-deposit-contract.js --endpoint $SIGNER_EL_DATADIR/geth.ipc)
+address="0x23DDc2B6A523e3497a44299E7026d347b12B83B0"
+transaction=""
+block_number="3"
 
-echo "Deployed the deposit contract of the address $address in the transaction $transaction on the block number $block_number"
+# echo "Deployed the deposit contract of the address $address in the transaction $transaction on the block number $block_number"
 
 echo $address > $ROOT/deposit-address
 echo $block_number > $CONSENSUS_DIR/deploy_block.txt

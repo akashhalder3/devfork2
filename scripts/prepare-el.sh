@@ -15,8 +15,8 @@ new_account() {
     echo $address > $datadir/address
 
     # Add the account into the genesis state
-    alloc=$(echo $genesis | jq ".alloc + { \"${address:2}\": { \"balance\": \"$INITIAL_BALANCE\" } }")
-    genesis=$(echo $genesis | jq ". + { \"alloc\": $alloc }")
+    # alloc=$(echo $genesis | jq ".alloc + { \"${address:2}\": { \"balance\": \"$INITIAL_BALANCE\" } }")
+    # genesis=$(echo $genesis | jq ". + { \"alloc\": $alloc }")
 }
 
 genesis=../execution/genesis.json

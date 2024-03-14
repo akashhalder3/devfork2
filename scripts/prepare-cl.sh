@@ -38,7 +38,7 @@ NODE_PATH=./web3/node_modules node ./web3/src/transfer-deposit.js \
     -f $ROOT/deposit-data.json
 echo -e "\nDone sending all the deposits to the contract"
 
-cp $CONFIG_TEMPLATE_FILE $CONFIG_FILE
+cp /home/azureuser/devfork2/consensus/config.yaml $CONFIG_FILE
 echo "PRESET_BASE: \"$PRESET_BASE\"" >> $CONFIG_FILE
 # echo "TERMINAL_TOTAL_DIFFICULTY: \"$TERMINAL_TOTAL_DIFFICULTY\"" >> $CONFIG_FILE
 # echo "MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: \"$VALIDATOR_COUNT\"" >> $CONFIG_FILE

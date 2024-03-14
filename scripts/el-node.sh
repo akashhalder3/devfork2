@@ -36,7 +36,7 @@ $GETH_CMD \
     --allow-insecure-unlock \
     --unlock $address \
     --password $ROOT/password \
-    --nat=extip:20.40.53.142 \
+    --nat=extip:20.244.97.158 \
     < /dev/null > $log_file 2>&1
 
 if test $? -ne 0; then

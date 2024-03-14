@@ -37,7 +37,7 @@ $LIGHTHOUSE_CMD beacon_node \
     --execution-jwt $datadir/jwtsecret \
 	--enable-private-discovery \
 	--staking \
-    --enr-address 20.40.53.142 \
+    --enr-address 20.244.97.158 \
 	--enr-udp-port $port \
 	--enr-tcp-port $port \
 	--port $port \

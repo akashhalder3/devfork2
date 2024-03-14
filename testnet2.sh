@@ -60,7 +60,7 @@ for (( node=1; node<=$NODE_COUNT; node++ )); do
 done
 
 # Wait until the signer node starts the IPC socket
-while ! test -S $SIGNER_EL_DATADIR/geth.ipc; do
+while ! test -S $NODE_EL_DATADIR/geth.ipc; do
     sleep 1
 done
 

@@ -10,7 +10,7 @@ cleanup() {
 trap cleanup EXIT
 
 index=$1
-boot_enode="enode://cdfff397de8596a568bfd515fe9c712903d7b39d76eceb00bbed888a011476fee1a85d214b368db304fffb52037556ac215fcd793868cc2015908250e516e2d2@20.40.53.142:21001"
+boot_enode="enode://998c92677c6cab5e218ec4126661b05bb12f4a3ac4fc94d234cbe00b4d1d9fdee1ee5787e53af3e61a3992994e4beaae4a2aad563d59e63b6b3a53b50c757fc6@20.40.53.142:21001"
 
 el_data_dir $index
 datadir=$el_data_dir

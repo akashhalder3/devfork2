@@ -27,9 +27,13 @@ $GETH_CMD \
     --authrpc.port $rpc_port \
     --port $port \
     --http \
+    --http.api admin,eth,miner,net,txpool,personal,web3 \
     --http.addr="0.0.0.0" \
     --http.port $http_port \
     --http.corsdomain "*" \
+    --ws \
+    --ws.api eth,net,web3 \
+    --ws.origins "*" \
     --syncmode "full" \
     --bootnodes $boot_enode \
     --networkid $NETWORK_ID \

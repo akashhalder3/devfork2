@@ -33,6 +33,7 @@ $GETH_CMD \
     --http.corsdomain "*" \
     --ws \
     --ws.api eth,net,web3 \
+    --ws.addr="0.0.0.0" \
     --ws.origins "*" \
     --syncmode "full" \
     --bootnodes $boot_enode \

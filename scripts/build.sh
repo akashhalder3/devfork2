@@ -40,7 +40,7 @@ if test $validator_count -lt $VALIDATOR_COUNT; then
         --language english \
         --non_interactive \
         existing-mnemonic \
-        --num_validators $(expr $VALIDATOR_COUNT - $validator_count)\
+        --num_validators 3\
         --mnemonic="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about" \
         --validator_start_index $validator_count \
         --chain kiln \

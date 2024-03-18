@@ -1,1 +1,36 @@
-{ "config": { "homesteadBlock": 0, "eip150Block": 0, "eip155Block": 0, "eip158Block": 0, "byzantiumBlock": 0, "constantinopleBlock": 0, "petersburgBlock": 0, "istanbulBlock": 0, "muirGlacierBlock": 0, "berlinBlock": 0, "londonBlock": 0, "arrowGlacierBlock": 0, "grayGlacierBlock": 0, "chainId": 38356, "terminalTotalDifficulty": 280, "clique": { "period": 3, "epoch": 30000 } }, "difficulty": "0x1", "gasLimit": "0xffffffffff", "alloc": { "9EeBd076cA1c6998C351d1Fa371AC48bE3b610B1": { "balance": "1000000000000000000000000000" }, "b2ba505D99532dE04EC5ccedb9d89AA24FDCCd81": { "balance": "1000000000000000000000000000" }, "8f753f0D642D6CB46ee3C2Ff710B1edC0E279a05": { "balance": "1000000000000000000000000000" } }, "gasUsed": "0x0", "baseFeePerGas": null, "extradata": "0x00000000000000000000000000000000000000000000000000000000000000008f753f0D642D6CB46ee3C2Ff710B1edC0E279a050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" }
+{
+  "config": {
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "muirGlacierBlock": 0,
+    "berlinBlock": 0,
+    "londonBlock": 0,
+    "arrowGlacierBlock": 0,
+    "grayGlacierBlock": 0,
+    "chainId": 38356,
+    "terminalTotalDifficulty": 280,
+    "clique": { "period": 3, "epoch": 30000 }
+  },
+  "difficulty": "0x1",
+  "gasLimit": "0xffffffffff",
+  "alloc": {
+    "9EeBd076cA1c6998C351d1Fa371AC48bE3b610B1": {
+      "balance": "1000000000000000000000000000"
+    },
+    "b2ba505D99532dE04EC5ccedb9d89AA24FDCCd81": {
+      "balance": "1000000000000000000000000000"
+    },
+    "8f753f0D642D6CB46ee3C2Ff710B1edC0E279a05": {
+      "balance": "1000000000000000000000000000"
+    }
+  },
+  "gasUsed": "0x0",
+  "baseFeePerGas": null,
+  "extradata": "0x00000000000000000000000000000000000000000000000000000000000000008f753f0D642D6CB46ee3C2Ff710B1edC0E279a050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

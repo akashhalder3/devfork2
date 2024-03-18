@@ -13,7 +13,7 @@ fi
 
 # Use the signing node as a node to deploy the deposit contract
 # output=$(NODE_PATH=./web3/node_modules node ./web3/src/deploy-deposit-contract.js --endpoint $SIGNER_EL_DATADIR/geth.ipc)
-address="0x23DDc2B6A523e3497a44299E7026d347b12B83B0"
+# address="0x9FA8184Fa6Fd958DEc3123CCa4FEa5Fe63B5EA80"
 transaction=""
 block_number="3"
 

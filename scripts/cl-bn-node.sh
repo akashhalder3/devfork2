@@ -47,6 +47,7 @@ $LIGHTHOUSE_CMD beacon_node \
     --http-address 0.0.0.0 \
 	--http-port $http_port \
     --http-allow-origin="*" \
+    --prune-db \
     < /dev/null > $log_file 2>&1
 
 if test $? -ne 0; then

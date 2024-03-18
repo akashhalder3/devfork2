@@ -76,4 +76,4 @@ for (( node=1; node<=$NODE_COUNT; node++ )); do
     ./scripts/cl-vc-node.sh $node &
 done
 
-# wait -n
+wait -n

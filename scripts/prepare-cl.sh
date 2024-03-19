@@ -13,11 +13,11 @@ fi
 
 # Use the signing node as a node to deploy the deposit contract
 # output=$(NODE_PATH=./web3/node_modules node ./web3/src/deploy-deposit-contract.js --endpoint $SIGNER_EL_DATADIR/geth.ipc)
-address="0x9FA8184Fa6Fd958DEc3123CCa4FEa5Fe63B5EA80"
-transaction=""
+address="0xd96d60795c8ce69cb42669dc8f6e99f12c6eb9d3"
+transaction="abc"
 block_number="3"
 
-# echo "Deployed the deposit contract of the address $address in the transaction $transaction on the block number $block_number"
+echo "Deployed the deposit contract of the address $address in the transaction $transaction on the block number $block_number"
 
 echo $address > $ROOT/deposit-address
 echo $block_number > $CONSENSUS_DIR/deploy_block.txt
@@ -40,8 +40,8 @@ echo -e "\nDone sending all the deposits to the contract"
 
 cp /home/azureuser/devfork2/consensus/config.yaml $CONFIG_FILE
 cp /home/azureuser/devfork2/consensus/genesis.ssz /home/azureuser/devfork2/data/consensus
-PRESET_BASE=mainnet
-echo $PRESET_BASE
+# PRESET_BASE=mainnet
+# echo $PRESET_BASE
 # echo "TERMINAL_TOTAL_DIFFICULTY: \"$TERMINAL_TOTAL_DIFFICULTY\"" >> $CONFIG_FILE
 # echo "MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: \"$VALIDATOR_COUNT\"" >> $CONFIG_FILE
 # echo "MIN_GENESIS_TIME: \"$(expr $(date +%s) + $GENESIS_DELAY)\"" >> $CONFIG_FILE
@@ -72,7 +72,8 @@ echo $PRESET_BASE
 # 	--genesis-fork-version $GENESIS_FORK_VERSION \
 # 	--output-dir $CL_BOOTNODE_DIR
 
-bootnode_enr=enr:-My4QNYIeBSk1zLJh572xOHgorcKfcvDBfHaTk2-tuEOrsRtMYI2XvetKvG8SoAgkjjqO3Q34_6WMO60H8sBEkQajYMBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpB6zWmpcAAAaf__________gmlkgnY0gmlwhBQoNY6EcXVpY4IjKYlzZWNwMjU2azGhAuQx1XruZ74RpHSpwgMrMPodyLIgc9WgStqUrBqvWR1piHN5bmNuZXRzAIN0Y3CCIyiEdGNwNoIPq4N1ZHCCD6s
+bootnode_enr=enr:-My4QF5a9-ClYh_C8mfcwN04SrshmjAIlnaJrwFf6bXcOBNeMTLAGvI0Z7z7c3bpd9cYbHhwg0T6lkDUWjIeR-YgugQBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpB6zWmpcAAAaf__________gmlkgnY0gmlwhBQoNY6EcXVpY4IjKYlzZWNwMjU2azGhA2IRrNr6xnm1eV8p_hepd4TExsL925ogC6HNyuN-qbsMiHN5bmNuZXRzAIN0Y3CCIyiEdGNwNoIPq4N1ZHCCD6s
+
 echo "- $bootnode_enr" > $CONSENSUS_DIR/boot_enr.yaml
 echo "Generated $CONSENSUS_DIR/boot_enr.yaml"
 

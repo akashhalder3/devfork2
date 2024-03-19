@@ -68,41 +68,42 @@ fi
 existing-mnemonic \
 --num_validators 1 \
 --mnemonic="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about" \
---validator_start_index 1 \
+--validator_start_index 3 \
 --chain kiln
 
 geth \
---datadir /home/azureuser/devfork2/node1/ethereum \
+--datadir /home/azureuser/devfork2/data/node1/ethereum \
 --authrpc.addr="0.0.0.0" \
 --authrpc.port 3012 \
 --port 3011 \
 --http \
+--http.api admin,eth,miner,net,txpool,personal,web3 \
 --http.addr=0.0.0.0 \
 --http.port 3013 \
 --http.corsdomain="*" \
+--ws \
+--ws.api eth,net,web3 \
+--ws.origins "*" \
+--networkid 38356 \
 --allow-insecure-unlock \
---bootnodes "enode://155944db78f7357ac9f4b2bf2fbcd33098eb96c4888360ad7af8714c050978450d061eb0fdfe52cd673a4b5a9526ecb2445c8aaaf745ef024a3a7430be53ae13@20.40.53.142:21001" \
---networkid 6969 \
---unlock 89f47a3531d2b659ec6fca1d730c1bcb747e7f4f \
---password /home/azureuser/devfork2/password \
---mine \
---miner.etherbase 89f47a3531d2b659ec6fca1d730c1bcb747e7f4f \
+--unlock 0xf86c59670afbadef08ee00bdbaac52d4d892fcc2 \
 --syncmode "full" \
+--password /home/azureuser/devfork2/password \
 --nat=extip:20.244.97.158
 
 
 lighthouse \
---testnet-dir /home/azureuser/devfork2/consensus \
+--testnet-dir /home/azureuser/devfork2/data/consensus \
 account validator import \
 --directory /home/azureuser/devfork2/build/validator_keys \
---datadir /home/azureuser/devfork2/node1/lighthouse \
+--datadir /home/azureuser/devfork2/data/consensus/validator_keys/node1 \
 --reuse-password
 
 lighthouse beacon_node \
---datadir /home/azureuser/devfork2/node1/lighthouse \
---testnet-dir /home/azureuser/devfork2/consensus \
+--datadir /home/azureuser/devfork2/data/node1/lighthouse \
+--testnet-dir /home/azureuser/devfork2/data/consensus \
 --execution-endpoint http://localhost:3013 \
---execution-jwt /home/azureuser/devfork2/node1/lighthouse/jwtsecret \
+--execution-jwt /home/azureuser/devfork2/data/node1/lighthouse/jwtsecret \
 --enable-private-discovery \
 --staking \
 --enr-address 20.244.97.158 \
@@ -112,10 +113,8 @@ lighthouse beacon_node \
 --http \
 --http-address 0.0.0.0 \
 --http-port 9601 \
---eth1 \
---gui \
---http-allow-sync-stalled \
---libp2p-addresses /ip4/20.40.53.142/tcp/31001/p2p/16Uiu2HAm8gUZEhsuYZFmLw6X3DFmipFtST7U1685sLHwNcJip3Ej
+--boot-nodes enr:-MS4QEEdSayp1AN4AN-Jckg4rd2XDOZ8wOA7jeuN8EO6vwOzZuZ2QEBJ6RnuWi0mbykwH4VPEeSB7g02Yep_dl8LIdQLh2F0dG5ldHOIBgAAAAAAAACEZXRoMpCCGKyJAgAAAf__________gmlkgnY0gmlwhBQoNY6EcXVpY4J5GolzZWNwMjU2azGhAuR8Ti-Kf0faGlNs4UcPVELtNFZ8_TFJx_6q89xnGhW_iHN5bmNuZXRzD4N0Y3CCeRmDdWRwgnkZ \
+--http-allow-sync-stalled
 
 
 lighthouse validator_client \

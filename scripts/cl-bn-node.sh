@@ -48,7 +48,7 @@ $LIGHTHOUSE_CMD beacon_node \
 	--http-port $http_port \
     --http-allow-origin="*" \
     --purge-db \
-    --disable-deposit-contract-sync \
+    --http-allow-sync-stalled \
     < /dev/null > $log_file 2>&1
 
 if test $? -ne 0; then

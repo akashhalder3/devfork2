@@ -37,19 +37,13 @@ $LIGHTHOUSE_CMD beacon_node \
     --execution-jwt $datadir/jwtsecret \
 	--enable-private-discovery \
 	--staking \
-    --enr-address 20.244.97.158 \
+	--enr-address 20.244.97.158 \
 	--enr-udp-port $port \
 	--enr-tcp-port $port \
 	--port $port \
     --http \
-    --eth1 \
-    --gui \
-    --http-address 0.0.0.0 \
 	--http-port $http_port \
-    --http-allow-origin="*" \
-    --purge-db \
-    --http-allow-sync-stalled \
-    --disable-optimistic-finalized-sync \
+	--disable-packet-filter \
     < /dev/null > $log_file 2>&1
 
 if test $? -ne 0; then

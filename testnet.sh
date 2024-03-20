@@ -72,24 +72,24 @@ existing-mnemonic \
 --chain kiln
 
 geth \
---datadir /home/azureuser/devfork2/data/node1/ethereum \
+--datadir "/home/azureuser/devfork2/data/node1/ethereum" \
 --authrpc.addr="0.0.0.0" \
---authrpc.port 3012 \
---port 3011 \
---http \
---http.api admin,eth,miner,net,txpool,personal,web3 \
---http.addr=0.0.0.0 \
---http.port 3013 \
---http.corsdomain="*" \
---ws \
---ws.api eth,net,web3 \
---ws.origins "*" \
+--authrpc.vhosts "*" \
+--bootnodes enode://82cff4d29c4a4239d84388c586ee0f1c73abe50c3867b36ae494a5507319e2a2ae0fb3d97e41dd7e3090352090ef4b0da6f6087883bfd16cf2a3a1010ca89300@20.40.53.142:21001 \
 --networkid 38356 \
---allow-insecure-unlock \
---unlock 0xf86c59670afbadef08ee00bdbaac52d4d892fcc2 \
+--http \
+--http.api admin,net,eth,web3,debug \
+--http.addr="0.0.0.0" \
+--http.corsdomain "*" \
+--ws \
+--ws.api admin,net,eth,web3,debug \
+--ws.addr="0.0.0.0" \
+--ws.origins "*" \
 --syncmode "full" \
---password /home/azureuser/devfork2/password \
---nat=extip:20.244.97.158
+--allow-insecure-unlock \
+--unlock "0x80CCb896c6C52007692d5ee701020c8E194e14DF" \
+--rpc.allow-unprotected-txs \
+--nat extip:20.244.97.158
 
 
 lighthouse \

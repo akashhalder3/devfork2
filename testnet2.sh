@@ -60,9 +60,9 @@ for (( node=1; node<=$NODE_COUNT; node++ )); do
 done
 
 # Wait until the signer node starts the IPC socket
-# while ! test -S $NODE_EL_DATADIR/geth.ipc; do
-#     sleep 1
-# done
+while ! test -S $NODE_EL_DATADIR/geth.ipc; do
+    sleep 1
+done
 
 if ! ./scripts/prepare-cl.sh; then
     echo -e "\n*Failed!* in the consensus layer preparation step\n"

@@ -24,6 +24,7 @@ $LIGHTHOUSE_CMD validator_client \
 	--init-slashing-protection \
     --beacon-nodes http://0.0.0.0:$(expr $BASE_CL_HTTP_PORT + $index) \
     --suggested-fee-recipient $(cat $NODE_EL_DATADIR/address) \
+    --unencrypted-http-transport \
     < /dev/null > $log_file 2>&1
 
 if test $? -ne 0; then

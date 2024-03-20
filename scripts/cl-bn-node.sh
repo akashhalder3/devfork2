@@ -49,6 +49,7 @@ $LIGHTHOUSE_CMD beacon_node \
     --http-allow-origin="*" \
     --purge-db \
     --http-allow-sync-stalled \
+    --disable-optimistic-finalized-sync \
     < /dev/null > $log_file 2>&1
 
 if test $? -ne 0; then

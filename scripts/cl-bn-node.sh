@@ -48,7 +48,7 @@ $LIGHTHOUSE_CMD beacon_node \
 	--http-port $http_port \
     --http-allow-origin="*" \
     --purge-db \
-    --checkpoint-block "140" \
+    --checkpoint-block $CONSENSUS_DIR/deploy_block.txt \
     --checkpoint-state $CONSENSUS_DIR/genesis.ssz \
     < /dev/null > $log_file 2>&1
 

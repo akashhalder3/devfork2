@@ -72,7 +72,7 @@ cp /home/azureuser/devfork2/consensus/genesis.ssz /home/azureuser/devfork2/data/
 # 	--genesis-fork-version $GENESIS_FORK_VERSION \
 # 	--output-dir $CL_BOOTNODE_DIR
 
-bootnode_enr=enr:-My4QF5a9-ClYh_C8mfcwN04SrshmjAIlnaJrwFf6bXcOBNeMTLAGvI0Z7z7c3bpd9cYbHhwg0T6lkDUWjIeR-YgugQBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpB6zWmpcAAAaf__________gmlkgnY0gmlwhBQoNY6EcXVpY4IjKYlzZWNwMjU2azGhA2IRrNr6xnm1eV8p_hepd4TExsL925ogC6HNyuN-qbsMiHN5bmNuZXRzAIN0Y3CCIyiEdGNwNoIPq4N1ZHCCD6s
+bootnode_enr=enr:-My4QHyWmqWdkv8QY4cq9X8aBMm3xb4VwElLf7BZDNDUJIIIadlV_T2iwABfOTqXpLbl2F2YIkjMoDaoqPpC1ZBb_BgBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpB6zWmpcAAAaf__________gmlkgnY0gmlwhBQoNY6EcXVpY4IjKYlzZWNwMjU2azGhA1YniNWr5JIbHH4CipE40dEXfOM4ucGVpJHf5pZNrxK-iHN5bmNuZXRzAIN0Y3CCIyiEdGNwNoIPq4N1ZHCCD6s
 
 echo "- $bootnode_enr" > $CONSENSUS_DIR/boot_enr.yaml
 echo "Generated $CONSENSUS_DIR/boot_enr.yaml"

@@ -10,7 +10,7 @@ cleanup() {
 trap cleanup EXIT
 
 index=$1
-boot_enode="enode://32b5501eb6fc1456e30c89e9d6d0a07628277f6b47d00fb6665dcb39c6500f88c86a831d9a4622d17364a0f28c5d26732193ef3181fa84a9c6e3fc5a8003e7d4@20.40.53.142:21001"
+boot_enode="enode://82cff4d29c4a4239d84388c586ee0f1c73abe50c3867b36ae494a5507319e2a2ae0fb3d97e41dd7e3090352090ef4b0da6f6087883bfd16cf2a3a1010ca89300@20.40.53.142:21001"
 
 el_data_dir $index
 datadir=$el_data_dir
@@ -25,23 +25,25 @@ $GETH_CMD \
     --datadir $datadir \
     --authrpc.addr="0.0.0.0" \
     --authrpc.port $rpc_port \
+    --authrpc.vhosts "*" \
     --port $port \
+    --bootnodes $boot_enode \
+    --networkid $NETWORK_ID \
     --http \
-    --http.api admin,eth,miner,net,txpool,personal,web3 \
+    --http.api admin,net,eth,web3,debug \
     --http.addr="0.0.0.0" \
     --http.port $http_port \
     --http.corsdomain "*" \
     --ws \
-    --ws.api eth,net,web3 \
+    --ws.api admin,net,eth,web3,debug \
     --ws.addr="0.0.0.0" \
     --ws.origins "*" \
     --syncmode "full" \
-    --bootnodes $boot_enode \
-    --networkid $NETWORK_ID \
     --allow-insecure-unlock \
     --unlock $address \
     --password $ROOT/password \
-    --nat=extip:20.244.97.158 \
+    --rpc.allow-unprotected-txs \
+    --nat extip:20.244.97.158 \
     < /dev/null > $log_file 2>&1
 
 if test $? -ne 0; then

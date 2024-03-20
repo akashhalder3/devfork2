@@ -48,8 +48,7 @@ $LIGHTHOUSE_CMD beacon_node \
 	--http-port $http_port \
     --http-allow-origin="*" \
     --purge-db \
-    --checkpoint-block $CONSENSUS_DIR/deploy_block.txt \
-    --checkpoint-state $CONSENSUS_DIR/genesis.ssz \
+    --disable-deposit-contract-sync \
     < /dev/null > $log_file 2>&1
 
 if test $? -ne 0; then
